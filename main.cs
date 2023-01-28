@@ -23,8 +23,15 @@ namespace GraphiccFunction
         }
         static string Evaluate(string expression, double x)
         {
-            Form1 f= new Form1();
-            expression = expression.Replace("x", x.ToString());
+            expression = expression.Replace("cos", "System.Math.Cos");
+            expression = expression.Replace("sin", "System.Math.Sin");
+            expression = expression.Replace("tan", "System.Math.Tan");
+            expression = expression.Replace("pow", "System.Math.Pow");
+            expression = expression.Replace("sqrt", "System.Math.Sqrt");
+            expression = expression.Replace("log", "System.Math.Log");
+            expression = expression.Replace("pi", "System.Math.PI");
+            expression = expression.Replace("e", "System.Math.E");
+            expression = expression.Replace("exp", "System.Math.Exp");
 
             return expression;
         }
@@ -46,7 +53,7 @@ namespace GraphiccFunction
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
     }
